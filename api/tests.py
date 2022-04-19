@@ -52,4 +52,47 @@ class CCAPITest(APITestCase):
         request = self.factory.get('/user')
         response = self.userprofile_view(request)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+    
+    def test_fail(self):
+        #response = self.userprofile_view(request)
+        request = self.factory.post('/queue/run/islandoraq.tasks.tasks.ingest_recipe/', {"function": "islandoraq.tasks.tasks.ingest_recipe","queue": "repository-islandora-test-workerq","args": ["https://bag.ou.edu/derivative/Darwin_1864/jpeg_040_antialias/darwin_1864.json"],"kwargs": {},"tags": []}, content_type='application/json')
+        force_authenticate(request, user=self.user)
+        print(request)
+        response = self.apiroot_view(request)
+        print(response)
+        self.assertEqual(0,0)
+
+    def test_cybercom_add(self):
+        self.assertEqual(0,1)
+    
+    def test_islandora_add(self):
+        self.assertEqual(0,1)
+
+    def test_islandora_clear_drush_cache(self):
+        self.assertEqual(0,1)
+    
+    def test_islandora_delete_item(self):
+        self.assertEqual(0,1)
+
+    def test_islandora_ingest_and_verify(self):
+        self.assertEqual(0,1)
+
+    def test_islandora_ingest_recipe(self):
+        self.assertEqual(0,1)
+
+    def test_islandora_ingest_status(self):
+        self.assertEqual(0,1)
+    
+    def test_islandora_object_exists(self):
+        self.assertEqual(0,1)
+
+    def test_islandora_read_item(self):
+        self.assertEqual(0,1)
+    
+    def test_islandora_updatecatalog(self):
+        self.assertEqual(0,1)
+    
+    def test_islandora_verify_solr_up(self):
+        self.assertEqual(0,1)
+    
 
