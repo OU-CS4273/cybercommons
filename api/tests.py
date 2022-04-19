@@ -53,15 +53,6 @@ class CCAPITest(APITestCase):
         response = self.userprofile_view(request)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
     
-    def test_fail(self):
-        #response = self.userprofile_view(request)
-        request = self.factory.post('/queue/run/islandoraq.tasks.tasks.ingest_recipe/', {"function": "islandoraq.tasks.tasks.ingest_recipe","queue": "repository-islandora-test-workerq","args": ["https://bag.ou.edu/derivative/Darwin_1864/jpeg_040_antialias/darwin_1864.json"],"kwargs": {},"tags": []}, content_type='application/json')
-        force_authenticate(request, user=self.user)
-        print(request)
-        response = self.apiroot_view(request)
-        print(response)
-        self.assertEqual(0,0)
-
     def test_cybercom_add(self):
         self.assertEqual(0,1)
     
