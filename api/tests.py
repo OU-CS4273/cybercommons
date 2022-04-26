@@ -69,7 +69,10 @@ class CCAPITest(APITestCase):
         self.assertEqual(0,1)
 
     def test_islandora_ingest_recipe(self):
-        self.assertEqual(0,1)
+        request = self.factory.post('/queue/run/islandoraq.tasks.tasks.ingest_recipe/', {"function": "islandoraq.tasks.tasks.ingest_recipe","queue": "repository-islandora-test-workerq","args": ["https://bag.ou.edu/derivative/Darwin_1864/jpeg_040_antialias/darwin_1864.json"],"kwargs": {},"tags": []}, format='json')
+        force_authenticate(request, user=self.user)
+        response = self.userprofile_view(request)
+        self.assertEqual(response.status_code,status.HTTP_200_OK)
 
     def test_islandora_ingest_status(self):
         self.assertEqual(0,1)
