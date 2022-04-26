@@ -47,6 +47,8 @@ DEBUG = bool(os.getenv('DEBUG') in ('True', 'true'))
 
 ALLOWED_HOSTS = [host.strip() for host in os.getenv('ALLOWED_HOSTS', '').split(',') if host.strip()]
 
+CSRF_TRUSTED_ORIGINS = ['.gitpod.io']
+
 #Logging
 LOGGING = {
     'version': 1,
