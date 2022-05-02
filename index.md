@@ -64,7 +64,10 @@ def test_islandora_ingest_recipe(self):
 
 </br>
 
-* something
+* Initially had little to no unit/integration testing 
+* Code was around 7+ years old => need to test considering how fast tech changes
+* A way to assist OU Library IT
+* Testing code can: improve quality, make debugging easier, and facilitate the implementation of future features and refactoring
 
 
 --- 
@@ -74,6 +77,7 @@ def test_islandora_ingest_recipe(self):
 
 * Getting the Environment set up
 * Making sure the tasks are running correctly
+* Some gaps in communication with sponsor
 
 
 ---
