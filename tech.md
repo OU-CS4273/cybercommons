@@ -64,9 +64,9 @@ Group 1 - Kenton Huff, Julie Nguyen, Jennifer Pham, Grace Wu
 
 </br>
 
-* container environment that held and ran Cybercommons
+* container that held and ran Cybercommons
 * helped to test and deploy code for the application
-* helps with software dependencies
+* contains Cybercommons' software dependencies to avoid local environment setup issues
 
 
 
