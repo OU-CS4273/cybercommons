@@ -52,12 +52,6 @@ def test_islandora_ingest_recipe(self):
         self.assertEqual(response.status_code,status.HTTP_200_OK)
 
 ```
----
-# Demonstration
-
-</br>
-
-* insert link
 
 ---
 # Why it's important
@@ -78,9 +72,3 @@ def test_islandora_ingest_recipe(self):
 * Getting the Environment set up
 * Making sure the tasks are running correctly
 * Some gaps in communication with sponsor
-
-
----
-
-# **Questions?**
-
