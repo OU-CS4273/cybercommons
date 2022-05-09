@@ -75,7 +75,7 @@ class CCAPITest(APITestCase):
         self.assertEqual(response.status_code,status.HTTP_200_OK)
         
     def test_dspace_task_add(self):
-        request = self.factory.post('/queue/run/dspaceq.tasks.tasks.add/', {"function": "dspaceq.tasks.tasks.add","queue": "dev_dspace","args": [12,12],"kwargs": {},"tags": [], format='json')
+        request = self.factory.post('/queue/run/dspaceq.tasks.tasks.add/', {"function": "dspaceq.tasks.tasks.add","queue": "dev_dspace","args": [12,12],"kwargs": {},"tags": []}, format='json')
         force_authenticate(request, user=self.user)
         response = self.userprofile_view(request)
         self.assertEqual(response.status_code,status.HTTP_200_OK)
