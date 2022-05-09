@@ -73,9 +73,18 @@ class CCAPITest(APITestCase):
         force_authenticate(request, user=self.user)
         response = self.userprofile_view(request)
         self.assertEqual(response.status_code,status.HTTP_200_OK)
+        
+    def test_dspace_task_add(self):
+        request = self.factory.post('/queue/run/dspaceq.tasks.tasks.add/', {"function": "dspaceq.tasks.tasks.add","queue": "dev_dspace","args": [12,12],"kwargs": {},"tags": [], format='json')
+        force_authenticate(request, user=self.user)
+        response = self.userprofile_view(request)
+        self.assertEqual(response.status_code,status.HTTP_200_OK)
 
     def test_islandora_ingest_status(self):
-        self.assertEqual(0,1)
+        request = self.factory.post('/queue/run/islandoraq.tasks.tasks.ingest_status/', {"function": "islandoraq.tasks.tasks.ingest_status","queue": "repository-islandora-prod-green-workerq","args": ["https://bag.ou.edu/derivative/Bacon_1620/jpeg_040_antialias/bacon_1620.json"],"kwargs": {"namespace": "oku"},"tags": []}, format='json')
+        force_authenticate(request, user=self.user)
+        response = self.userprofile_view(request)
+        self.assertEqual(response.status_code,status.HTTP_200_OK)
     
     def test_islandora_object_exists(self):
         self.assertEqual(0,1)
