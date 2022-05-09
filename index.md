@@ -37,7 +37,7 @@ Group 1 - Kenton Huff, Julie Nguyen, Jennifer Pham, Grace Wu
 * Environment already set up
 
 ---
-# Test We Wrote
+# Example Test
 
 ```python
 
@@ -53,6 +53,22 @@ def test_islandora_ingest_recipe(self):
 
 ```
 
+---
+# Output
+```python
+$ make test
+
+.
+.
+.
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.036s
+
+OK
+Destroying test database for alias 'default'...
+
+```
 ---
 # Why it's important
 
