@@ -52,50 +52,12 @@ class CCAPITest(APITestCase):
         request = self.factory.get('/user')
         response = self.userprofile_view(request)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
-    
-    def test_cybercom_add(self):
-        self.assertEqual(0,1)
-    
-    def test_islandora_add(self):
-        self.assertEqual(0,1)
-
-    def test_islandora_clear_drush_cache(self):
-        self.assertEqual(0,1)
-    
-    def test_islandora_delete_item(self):
-        self.assertEqual(0,1)
-
-    def test_islandora_ingest_and_verify(self):
-        self.assertEqual(0,1)
 
     def test_islandora_ingest_recipe(self):
         request = self.factory.post('/queue/run/islandoraq.tasks.tasks.ingest_recipe/', {"function": "islandoraq.tasks.tasks.ingest_recipe","queue": "repository-islandora-test-workerq","args": ["https://bag.ou.edu/derivative/Darwin_1864/jpeg_040_antialias/darwin_1864.json"],"kwargs": {},"tags": []}, format='json')
         force_authenticate(request, user=self.user)
         response = self.userprofile_view(request)
         self.assertEqual(response.status_code,status.HTTP_200_OK)
-        
-    def test_dspace_task_add(self):
-        request = self.factory.post('/queue/run/dspaceq.tasks.tasks.add/', {"function": "dspaceq.tasks.tasks.add","queue": "dev_dspace","args": [12,12],"kwargs": {},"tags": []}, format='json')
-        force_authenticate(request, user=self.user)
-        response = self.userprofile_view(request)
-        self.assertEqual(response.status_code,status.HTTP_200_OK)
 
-    def test_islandora_ingest_status(self):
-        request = self.factory.post('/queue/run/islandoraq.tasks.tasks.ingest_status/', {"function": "islandoraq.tasks.tasks.ingest_status","queue": "repository-islandora-prod-green-workerq","args": ["https://bag.ou.edu/derivative/Bacon_1620/jpeg_040_antialias/bacon_1620.json"],"kwargs": {"namespace": "oku"},"tags": []}, format='json')
-        force_authenticate(request, user=self.user)
-        response = self.userprofile_view(request)
-        self.assertEqual(response.status_code,status.HTTP_200_OK)
-    
-    def test_islandora_object_exists(self):
-        self.assertEqual(0,1)
-
-    def test_islandora_read_item(self):
-        self.assertEqual(0,1)
-    
-    def test_islandora_updatecatalog(self):
-        self.assertEqual(0,1)
-    
-    def test_islandora_verify_solr_up(self):
-        self.assertEqual(0,1)
     
 
